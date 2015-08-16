@@ -1,0 +1,21 @@
+
+userName="user26"
+
+serverMachine="dryad02"
+clientMachine="dryad03"
+dbMachine="dryad04"
+dbPort=5432
+
+ioTPSize=16
+processorTpSize=32
+dbConnPoolSize=32
+
+numClients=32
+runTimeInSecs=300
+numRuns=5
+msgLength="OneKCharacters"
+newSetup="true"
+startExperimentId=1
+isLast="false"
+
+resDirectoy="enter value here"

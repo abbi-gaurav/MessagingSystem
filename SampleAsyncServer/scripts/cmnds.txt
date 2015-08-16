@@ -1,0 +1,50 @@
+[27/10/13 24:02:42 am] gaurav abbi: dryad12 id db machine
+[27/10/13 24:02:51 am] gaurav abbi: dryad09 is server
+[27/10/13 24:02:57 am] gaurav abbi: dryad10 is client
+[27/10/13 24:03:20 am] gaurav abbi: dryad11,  i ll launch the tests
+
+
+
+cat ~/.ssh/id_rsa.pub | ssh USER@HOST "cat >> ~/.ssh/authorized_keys"
+
+cat .ssh/intraCluster.pub |ssh user26@dryad09 "cat >> ~/.ssh/authorized_keys"
+
+
+./server_setup_run_local.sh user26 dryad10 2500 20 30 30 dryad12 5432 01
+
+
+./server_setup_run_local.sh user26 dryad10 2500 20 30 30 dryad12 5432 01
+
+
+./client_setup_run_local.sh user26 dryad11 dryad10 2500 POST TwoKCharcaters 10 3 30
+
+user26@dryad10:~/testRun/logs/perfRuns$ cp perfDB1382867698455perfResult.txt /mnt/asl/user26/results/1/
+
+
+user26@dryad11:~/testRun/logs/perfRuns/1$ cp out* ClientId_* /mnt/asl/user26/results/1/
+
+
+
+
+user26@dryad11:~/testRun/scripts$ 
+Runs::
+==========
+./client_setup_run_local.sh user26 dryad11 dryad10 2500 POST TwoKCharcaters 600 1 30
+
+./client_setup_run_local.sh user26 dryad11 dryad10 2500 POST TwoKCharcaters 600 2 30
+./client_setup_run_local.sh user26 dryad11 dryad10 2500 RETRIEVE_MESSAGE TwoKCharcaters 600 2 30
+
+./client_setup_run_local.sh user26 dryad11 dryad10 2500 POST TwoKCharcaters 600 3 30
+./client_setup_run_local.sh user26 dryad11 dryad10 2500 RETRIEVE_MESSAGE TwoKCharcaters 300 3 30
+
+
+29-10-2013
+user26@dryad11:~/testRun/scripts$ ./client_request_reply.sh user26 dryad11 dryad10 2500 TwoKCharcaters 300 5 32
+./client_request_reply.sh user26 dryad11 dryad10 2500 TwoKCharcaters 7200 6 32
+
+
+
+29-10-2013
+==============
+
+./client_request_reply.sh user26 dryad06 dryad05 2500 TwoKCharcaters 10800 8 32
